@@ -1,6 +1,30 @@
 #include <stdio.h> 
 
-  
+void soma (float valor1, float valor2){
+	float resultado;
+	resultado = valor1+valor2;
+	printf("Resultado da soma: %.2f\n",resultado);
+}
+
+void subtracao (float valor1, float valor2){
+	float resultado;
+	resultado = valor1-valor2;
+	printf("Resultado da subtracao: %.2f\n",resultado);
+}
+
+void multiplicacao (float valor1, float valor2)
+{
+	float resultado;
+	resultado = valor1*valor2;
+	printf("Resultado da multiplicacao: %.2f\n",resultado);
+}
+
+void divisao (float valor1, float valor2){
+	float resultado;
+	resultado = valor1/valor2;
+	printf("Resultado da divisao: %.2f\n",resultado);
+}
+
 
 int main () { 
 
@@ -8,7 +32,7 @@ int main () {
 
   char operacao; 
 
-  float num1, num2, resultado; 
+  float valor1, valor2, resultado; 
 
   int continuar; 
 
@@ -30,13 +54,13 @@ scanf (" %c", &operacao);
 
 printf ("Digite o primeiro numero: "); 
 
-scanf ("%f", &num1); 
+scanf ("%f", &valor1); 
 
   
 
 printf ("Digite o segundo numero: "); 
 
-scanf ("%f", &num2); 
+scanf ("%f", &valor2); 
 
   
 
@@ -44,53 +68,40 @@ switch (operacao) {
 
   
 
-  case '+': 
+  case '+':
 
-resultado = num1 + num2; 
-
-printf ("o resultado e igual:%.2f", resultado); 
+soma(valor1, valor2);
 
 break; 
 
-  
+  case 'p':
+subtracao(valor1, valor2);
+break;
 
-  case '-': 
+  case '-':
 
-resultado = num1 - num2; 
-
-printf ("o resultado e igual:%.2f", resultado); 
-
+subtracao(valor1, valor2);
 break; 
 
   
 
   case '*': 
 
-resultado = num1 * num2; 
-
-printf ("o resultado e igual a:%.2f", resultado); 
-
+multiplicacao(valor1, valor2);
 break; 
-
-  
 
   case '/': 
 
-if (num1 != 0 && num2 != 0) { 
+if (valor1 != 0 && valor2 != 0) { 
 
-    resultado = num1 / num2; 
-
-    printf ("o resultado e igual a:%.2f", resultado); 
+       divisao(valor1, valor2);	
 
 } else { 
 
   printf ("Erro:não e possivel divisao por zero\n"); 
-
 } 
 
 break; 
-
-  
 
   default: 
 
